@@ -19,9 +19,16 @@
 <script>
 var box= document.getElementById("box") 
 var x=0
+var speed=5
 setInterval(update,50)
 function update(){
-    box.style.left=x+"px"
-    x=x+5
+    box.style.left=x+"px"   
+    x=x+speed
+  if(x>495){
+     speed= speed * -1
+  }
+  if(x===0){
+      speed= speed * -1
+  }
 }
 </script>
