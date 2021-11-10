@@ -6,7 +6,7 @@
                 height:300px;
             }
             p{
-                color:blue;
+                color:darksalmon;
             }
             body{
                 color:brown;
@@ -15,12 +15,13 @@
     </head>
     <body>
         <img id="hive" src= "Bee_Nest_(S)_JE1.png">   
-       
+        <p id="score">Honey = 0</p>
     </body>
 </html>
 <script>
     document.getElementById("hive").addEventListener("click",imageClick)
+    var score=0
     function imageClick(){
-       alert()
+       score=score+1
     }
 </script>
