@@ -9,13 +9,18 @@
                 color:darksalmon;
             }
             body{
-                color:brown;
+                color:rgb(231, 200, 23);
+            }
+            #beeBox{
+                width:100px;
+                height:150px;
             }
         </style>
     </head>
     <body>
         <img id="hive" src= "Bee_Nest_(S)_JE1.png">   
         <p id="score">Honey = 0</p>
+        <img id="beeBox" src="9Tew.jpg"> Bee Box
     </body>
 </html>
 <script>
@@ -23,5 +28,9 @@
     var score=0
     function imageClick(){
        score=score+1
+       document.getElementById("score").innerText="Honey = " +score
+    }
+    function beeBox(){
+        addEventListener
     }
 </script>
