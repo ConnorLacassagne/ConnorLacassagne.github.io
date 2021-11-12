@@ -20,17 +20,24 @@
     <body>
         <img id="hive" src= "Bee_Nest_(S)_JE1.png">   
         <p id="score">Honey = 0</p>
-        <img id="beeBox" src="9Tew.jpg"> Bee Box
+        <img id="beeBox" src="9Tew.jpg"> 
     </body>
 </html>
-<script>
-    document.getElementById("hive").addEventListener("click",imageClick)
+<script> 
     var score=0
+    document.getElementById("hive").addEventListener("click",imageClick)
+    document.getElementById("beeBox").addEventListener("click",beeBox)
+    setInterval(multiplier,500)
+   
     function imageClick(){
        score=score+1
        document.getElementById("score").innerText="Honey = " +score
     }
     function beeBox(){
-        addEventListener
+       
     }
+     function mutiplier(){
+        score=score+1
+        document.getElementById("score").innerText="Honey = " +score    
+     }
 </script>
