@@ -27,14 +27,15 @@
     var score=0
     document.getElementById("hive").addEventListener("click",imageClick)
     document.getElementById("beeBox").addEventListener("click",beeBox)
-    setInterval(multiplier,500)
+    
    
     function imageClick(){
        score=score+1
        document.getElementById("score").innerText="Honey = " +score
     }
     function beeBox(){
-       
+        setInterval(multiplier,500) 
+
     }
      function multiplier(){
         score=score+1
