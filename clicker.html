@@ -10,11 +10,13 @@
             }
             body{
                 color:rgb(231, 200, 23);
+                background: url("https://media.architecturaldigest.com/photos/56a16950883e5aaf0648d52e/master/w_2100,h_1383,c_limit/fields-of-flowers-05.JPG")
             }
             #beeBox{
                 width:100px;
                 height:150px;
             }
+            
         </style>
     </head>
     <body>
@@ -35,7 +37,9 @@
     }
     function beeBox(){
         setInterval(multiplier,500) 
-
+        if(score>=5){
+        setInterval(multiplier,500)
+        }
     }
      function multiplier(){
         score=score+1
