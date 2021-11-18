@@ -6,23 +6,30 @@
                 height:300px;
             }
             p{
-                color:darksalmon;
+                color:black;
+                font-weight: bold;
+                background-color: darksalmon;
+                width:fit-content;
             }
             body{
-                color:rgb(231, 200, 23);
+                color:black;
                 background: url("https://media.architecturaldigest.com/photos/56a16950883e5aaf0648d52e/master/w_2100,h_1383,c_limit/fields-of-flowers-05.JPG")
             }
             #beeBox{
                 width:100px;
                 height:150px;
             }
-            
-        </style>
+            div{
+                background-color: darksalmon;
+                width:fit-content ;
+            }
+            </style>
     </head>
     <body>
         <img id="hive" src= "Bee_Nest_(S)_JE1.png">   
         <p id="score">Honey = 0</p>
         <img id="beeBox" src="9Tew.jpg"> 
+        <div>Bee Box - 5 Honey</div>
     </body>
 </html>
 <script> 
@@ -36,9 +43,9 @@
        document.getElementById("score").innerText="Honey = " +score
     }
     function beeBox(){
-        setInterval(multiplier,500) 
         if(score>=5){
         setInterval(multiplier,500)
+        score=score-5
         }
     }
      function multiplier(){
