@@ -1,55 +1,77 @@
 <!doctype html>
 <html>
-    <head>
-        <style>
-            img{
-                height:300px;
-            }
-            p{
-                color:black;
-                font-weight: bold;
-                background-color: darksalmon;
-                width:fit-content;
-            }
-            body{
-                color:black;
-                background: url("https://media.architecturaldigest.com/photos/56a16950883e5aaf0648d52e/master/w_2100,h_1383,c_limit/fields-of-flowers-05.JPG")
-            }
-            #beeBox{
-                width:100px;
-                height:150px;
-            }
-            div{
-                background-color: darksalmon;
-                width:fit-content ;
-            }
-            </style>
-    </head>
-    <body>
-        <img id="hive" src= "Bee_Nest_(S)_JE1.png">   
-        <p id="score">Honey = 0</p>
-        <img id="beeBox" src="9Tew.jpg"> 
-        <div>Bee Box - 5 Honey</div>
-    </body>
+
+<head>
+    <style>
+        img {
+            height: 300px;
+            
+        }
+
+        p {
+            color: black;
+            font-weight: bold;
+            background-color: darksalmon;
+            width: fit-content;
+        }
+
+        body {
+            color: black;
+            background: url("https://media.architecturaldigest.com/photos/56a16950883e5aaf0648d52e/master/w_2100,h_1383,c_limit/fields-of-flowers-05.JPG")
+        }
+
+        #beeBox {
+            width: 100px;
+            height: 150px;
+        }
+
+        div {
+            background-color: darksalmon;
+            width: fit-content;
+        }
+
+        #beeKeeper {
+            width: 150px;
+            height: fit-content;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="hive" src="Bee_Nest_(S)_JE1.png">
+    <p id="score">Honey = 0</p>
+    <img id="beeBox" src="9Tew.jpg">
+    <div>Bee Box - 5 Honey</div>
+    <img id="beeKeeper" src="100517286-beekeeper-in-a-protective-suit-vector-illustration-on-a-white-background.jpg">
+    <div>Bee Keeper - 20 Honey</div>
+</body>
+
 </html>
-<script> 
-    var score=0
-    document.getElementById("hive").addEventListener("click",imageClick)
-    document.getElementById("beeBox").addEventListener("click",beeBox)
-    
-   
-    function imageClick(){
-       score=score+1
-       document.getElementById("score").innerText="Honey = " +score
+<script>
+    var score = 0
+    document.getElementById("hive").addEventListener("click", imageClick)
+    document.getElementById("beeBox").addEventListener("click", beeBox)
+    document.getElementById("beeKeeper").addEventListener("click", beeKeeper)
+
+    function imageClick() {
+        score = score + 1
+        document.getElementById("score").innerText = "Honey = " + score
     }
-    function beeBox(){
-        if(score>=5){
-        setInterval(multiplier,500)
-        score=score-5
+    function beeBox() {
+        if (score >= 5) {
+            setInterval(multiplier, 500)
+            score = score - 5
         }
     }
-     function multiplier(){
-        score=score+1
-        document.getElementById("score").innerText="Honey = " +score    
-     }
+    function multiplier() {
+        score = score + 1
+        document.getElementById("score").innerText = "Honey = " + score
+    }
+    function beeKeeper() {
+        if (score >= 20) {
+            setInterval(multiplier, 200)
+            score = score - 20
+        }
+    }
 </script>
