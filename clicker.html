@@ -35,21 +35,29 @@
             height: fit-content;
             margin-top: 20px;
         }
+        #jar{
+            width: 100px;
+            height:fit-content
+            
+        }
     </style>
 </head>
 
 <body>
     <img id="hive" src="Bee_Nest_(S)_JE1.png">
     <p id="score">Honey = 0</p>
+    <img id="jar" src="istockphoto-950996184-170667a.jpg">
     <img id="beeBox" src="9Tew.jpg">
-    <div>Bee Box - 5 Honey</div>
     <img id="beeKeeper" src="100517286-beekeeper-in-a-protective-suit-vector-illustration-on-a-white-background.jpg">
-    <div>Bee Keeper - 20 Honey</div>
+    Jar - 5 Honey
+    Bee Box - 10 Honey
+    Bee Keeper - 20 Honey
 </body>
 
 </html>
 <script>
     var score = 0
+    var upgradeAmount
     document.getElementById("hive").addEventListener("click", imageClick)
     document.getElementById("beeBox").addEventListener("click", beeBox)
     document.getElementById("beeKeeper").addEventListener("click", beeKeeper)
@@ -59,9 +67,10 @@
         document.getElementById("score").innerText = "Honey = " + score
     }
     function beeBox() {
-        if (score >= 5) {
-            setInterval(multiplier, 500)
-            score = score - 5
+        if (score >= 10) {
+            setInterval(multiplier, 1000)
+            score = score - 10
+            document.getElementById("upgradeAmount").innerText ="Amount = "
         }
     }
     function multiplier() {
@@ -70,8 +79,9 @@
     }
     function beeKeeper() {
         if (score >= 20) {
-            setInterval(multiplier, 200)
+            setInterval(multiplier, 500)
             score = score - 20
+            document.getElementById("upgradeAmount").innerText ="Amount = "
         }
     }
 </script>
