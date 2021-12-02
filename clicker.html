@@ -55,6 +55,14 @@
         #factory{
             width: 200px;
             height: fit-content;
+            margin-right: 20px;
+        }
+        #planet{
+            height: 200px;
+            margin-right: 20px;
+        }
+        #galaxy{
+            width: 100px;
         }
     </style>
 </head>
@@ -65,11 +73,13 @@
     <img id="jar" src="istockphoto-950996184-170667a.jpg">
     <img id="beeBox" src="9Tew.jpg">
     <img id="beeKeeper" src="100517286-beekeeper-in-a-protective-suit-vector-illustration-on-a-white-background.jpg">
-    <img id="factory" src="istockphoto-1223792696-612x612.jpg"
+    <img id="factory" src="istockphoto-1223792696-612x612.jpg">
+    <img id="planet" src="natielle-jardim-honey-planet-1.jpg">
+    <img id="glaxy" src="7de40b59213223.5a19ce7bcf45a.jpg"
     <br><br>
-    <div>Jar - 5 Honey</div> <div>Bee Box - 10 Honey</div> <div>Bee Keeper - 20 Honey</div> <div>Honey Factory - 50 Honey</div>
+    <div>Jar - 5 Honey</div> <div>Bee Box - 10 Honey</div> <div>Bee Keeper - 20 Honey</div> <div>Honey Factory - 50 Honey</div> <div>Honey Planet - 100 Honey</div> <div>Bee Galaxy - 200 Honey</div>
    
-<br>    <p2 id= "upgradeAmountC">Amount = 0</p2> <p2 id= "upgradeAmountA">Amount = 0</p2> <p2 id= "upgradeAmountB">Amount = 0</p2> <p2 id= "upgradeAmountD">Amount = 0</p2>
+<br>    <p2 id= "upgradeAmountC">Amount = 0</p2> <p2 id= "upgradeAmountA">Amount = 0</p2> <p2 id= "upgradeAmountB">Amount = 0</p2> <p2 id= "upgradeAmountD">Amount = 0</p2> <p2 id="upgradeAmountE">Amount = 0</p2> <p2 id="upgradeAmountF">Amount = 0</p2>
 
 </body>
 
@@ -80,12 +90,16 @@
     var upgradeAmountB = 0
     var upgradeAmountC = 0
     var upgradeAmountD = 0
+    var upgradeAmountE = 0
+    var upgradeAmountF = 0
 
     document.getElementById("hive").addEventListener("click", imageClick)
     document.getElementById("beeBox").addEventListener("click", beeBox)
     document.getElementById("beeKeeper").addEventListener("click", beeKeeper)
     document.getElementById("jar").addEventListener("click",jar)
     document.getElementById("factory").addEventListener("click",factory)
+    document.getElementById("planet").addEventListener("click",planet)
+    document.getElementById("galaxy").addEventListener("click",galaxy)
 
     
     function imageClick() {
@@ -94,7 +108,7 @@
     }
     function beeBox() {
         if (score >= 10) {
-            setInterval(multiplier, 1000)
+            setInterval(multiplier, 1500)
             score = score - 10
             upgradeAmountA = upgradeAmountA +1
             document.getElementById("upgradeAmountA").innerText ="Amount = " + upgradeAmountA
@@ -106,7 +120,7 @@
     }
     function beeKeeper() {
         if (score >= 20) {
-            setInterval(multiplier, 500)
+            setInterval(multiplier, 800)
             score = score - 20
             upgradeAmountB = upgradeAmountB +1
             document.getElementById("upgradeAmountB").innerText ="Amount = "+ upgradeAmountB
@@ -114,7 +128,7 @@
     }
     function jar() {
         if (score >= 5) {
-            setInterval(multiplier, 1500)
+            setInterval(multiplier, 2000)
             score = score - 5
             upgradeAmountC = upgradeAmountC +1
             document.getElementById("upgradeAmountC").innerText ="Amount = " + upgradeAmountC
@@ -122,10 +136,26 @@
     }    
     function factory() {
             if (score >= 50) {
-            setInterval(multiplier, 100)
+            setInterval(multiplier, 500)
             score = score - 50
             upgradeAmountD = upgradeAmountD +1
             document.getElementById("upgradeAmountD").innerText ="Amount = " + upgradeAmountD
         }
+    }
+    function planet(){
+        if (score >= 100) {
+            setInterval(multiplier, 100)
+            score = score - 100
+            upgradeAmountE = upgradeAmountE +1
+            document.getElementById("upgradeAmountE").innerText ="Amount = " + upgradeAmountE
+        }
+    }
+    function galaxy(){
+        if (score >= 200) {
+            setInterval(multiplier, 50)
+            score = score - 200
+            upgradeAmountF = upgradeAmountF +1
+            document.getElementById("upgradeAmountF").innerText ="Amount = " + upgradeAmountF
+        }  
     }
 </script>
