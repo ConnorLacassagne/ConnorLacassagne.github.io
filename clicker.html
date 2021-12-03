@@ -3,11 +3,6 @@
 
 <head>
     <style>
-        img {
-            height: 300px;
-            
-        }
-
         p {
             color: black;
             font-weight: bold;
@@ -16,7 +11,7 @@
         }
 
         p2 {
-            margin-right: 85px;
+            margin-right: 60px;
             background-color: grey;
         }
 
@@ -25,61 +20,75 @@
             background: url("https://media.architecturaldigest.com/photos/56a16950883e5aaf0648d52e/master/w_2100,h_1383,c_limit/fields-of-flowers-05.JPG")
         }
 
-        #beeBox {
-            width: 100px;
-            height: 150px;
-            margin-right: 50px;
-        }
+        
 
         div {
             background-color: darksalmon;
             width: fit-content;
             margin-right: 85px;
             display: contents;
-            
+
+        }
+        #beeBox {
+            width: 100px;
+            height: 150px;
         }
 
         #beeKeeper {
             width: 150px;
-            height: fit-content;
-            margin-top: 20px;
-            margin-right: 20px;
         }
-        #jar{
+
+        #jar {
             width: 100px;
-            height:fit-content;
-            margin-right: 50px;
-        
-            
+
         }
-        #factory{
-            width: 200px;
-            height: fit-content;
-            margin-right: 20px;
+
+        #factory {
+            width: 14%;
         }
-        #planet{
-            height: 200px;
-            margin-right: 20px;
+
+        #planet {
+            width: 10.4%;
         }
-        #galaxy{
-            width: 100px;
+
+        #galaxy {
+            width: 37%;
+        }
+
+        .button {
+
+            margin-right: 1%;
+            border-style: solid;
+            border-color: purple;
         }
     </style>
 </head>
 
 <body>
-    <img id="hive" src="Bee_Nest_(S)_JE1.png"> 
+    <img id="hive" src="Bee_Nest_(S)_JE1.png">
     <p id="score">Honey = 0</p>
-    <img id="jar" src="istockphoto-950996184-170667a.jpg">
-    <img id="beeBox" src="9Tew.jpg">
-    <img id="beeKeeper" src="100517286-beekeeper-in-a-protective-suit-vector-illustration-on-a-white-background.jpg">
-    <img id="factory" src="istockphoto-1223792696-612x612.jpg">
-    <img id="planet" src="natielle-jardim-honey-planet-1.jpg">
-    <img id="glaxy" src="7de40b59213223.5a19ce7bcf45a.jpg"
+    <img class="button" id="jar" src="istockphoto-950996184-170667a.jpg">
+    <img class="button" id="beeBox" src="9Tew.jpg">
+    <img class="button" id="beeKeeper"
+        src="100517286-beekeeper-in-a-protective-suit-vector-illustration-on-a-white-background.jpg">
+    <img class="button" id="factory" src="istockphoto-1223792696-612x612.jpg">
+    <img class="button" id="planet" src="natielle-jardim-honey-planet-1.jpg">
+    <img class="button" id="galaxy" src="7de40b59213223.5a19ce7bcf45a.jpg">
     <br><br>
-    <div>Jar - 5 Honey</div> <div>Bee Box - 10 Honey</div> <div>Bee Keeper - 20 Honey</div> <div>Honey Factory - 50 Honey</div> <div>Honey Planet - 100 Honey</div> <div>Bee Galaxy - 200 Honey</div>
-   
-<br>    <p2 id= "upgradeAmountC">Amount = 0</p2> <p2 id= "upgradeAmountA">Amount = 0</p2> <p2 id= "upgradeAmountB">Amount = 0</p2> <p2 id= "upgradeAmountD">Amount = 0</p2> <p2 id="upgradeAmountE">Amount = 0</p2> <p2 id="upgradeAmountF">Amount = 0</p2>
+    <p>Jar - 20 Honey / 1 Honey per 2 seconds</p>
+    <p>Bee Box - 100 Honey / 1 Honey per 1.5 seconds</p>
+    <p>Bee Keeper - 500 Honey / 1 Honey per 0.8 seconds</p>
+    <p>Honey Factory - 1000 Honey / 1 Honey per 0.5 seconds</p>
+    <p>Honey Planet - 5000 Honey / 1 Honey per 0.1 seconds</p>
+    <p>Bee Galaxy - 10000 Honey / 1 Honey per 0.05 seconds</p>
+
+    <br>
+    <p2 id="upgradeAmountC">Amount of Jars = 0</p2>
+    <p2 id="upgradeAmountA">Amount of Bee Boxes = 0</p2>
+    <p2 id="upgradeAmountB">Amount of Beekeepers = 0</p2>
+    <p2 id="upgradeAmountD">Amount of Honey Factories = 0</p2>
+    <p2 id="upgradeAmountE">Amount of Bee Planets = 0</p2>
+    <p2 id="upgradeAmountF">Amount of Bee Galaxies = 0</p2>
 
 </body>
 
@@ -96,22 +105,22 @@
     document.getElementById("hive").addEventListener("click", imageClick)
     document.getElementById("beeBox").addEventListener("click", beeBox)
     document.getElementById("beeKeeper").addEventListener("click", beeKeeper)
-    document.getElementById("jar").addEventListener("click",jar)
-    document.getElementById("factory").addEventListener("click",factory)
-    document.getElementById("planet").addEventListener("click",planet)
-    document.getElementById("galaxy").addEventListener("click",galaxy)
+    document.getElementById("jar").addEventListener("click", jar)
+    document.getElementById("factory").addEventListener("click", factory)
+    document.getElementById("planet").addEventListener("click", planet)
+    document.getElementById("galaxy").addEventListener("click", galaxy)
 
-    
+
     function imageClick() {
         score = score + 1
         document.getElementById("score").innerText = "Honey = " + score
     }
     function beeBox() {
-        if (score >= 10) {
+        if (score >= 100) {
             setInterval(multiplier, 1500)
-            score = score - 10
-            upgradeAmountA = upgradeAmountA +1
-            document.getElementById("upgradeAmountA").innerText ="Amount = " + upgradeAmountA
+            score = score - 100
+            upgradeAmountA = upgradeAmountA + 1
+            document.getElementById("upgradeAmountA").innerText = "Amount = " + upgradeAmountA
         }
     }
     function multiplier() {
@@ -119,43 +128,43 @@
         document.getElementById("score").innerText = "Honey = " + score
     }
     function beeKeeper() {
-        if (score >= 20) {
+        if (score >= 500) {
             setInterval(multiplier, 800)
-            score = score - 20
-            upgradeAmountB = upgradeAmountB +1
-            document.getElementById("upgradeAmountB").innerText ="Amount = "+ upgradeAmountB
+            score = score - 500
+            upgradeAmountB = upgradeAmountB + 1
+            document.getElementById("upgradeAmountB").innerText = "Amount = " + upgradeAmountB
         }
     }
     function jar() {
-        if (score >= 5) {
+        if (score >= 20) {
             setInterval(multiplier, 2000)
-            score = score - 5
-            upgradeAmountC = upgradeAmountC +1
-            document.getElementById("upgradeAmountC").innerText ="Amount = " + upgradeAmountC
+            score = score - 20
+            upgradeAmountC = upgradeAmountC + 1
+            document.getElementById("upgradeAmountC").innerText = "Amount = " + upgradeAmountC
         }
-    }    
+    }
     function factory() {
-            if (score >= 50) {
+        if (score >= 1000) {
             setInterval(multiplier, 500)
-            score = score - 50
-            upgradeAmountD = upgradeAmountD +1
-            document.getElementById("upgradeAmountD").innerText ="Amount = " + upgradeAmountD
+            score = score - 1000
+            upgradeAmountD = upgradeAmountD + 1
+            document.getElementById("upgradeAmountD").innerText = "Amount = " + upgradeAmountD
         }
     }
-    function planet(){
-        if (score >= 100) {
+    function planet() {
+        if (score >= 5000) {
             setInterval(multiplier, 100)
-            score = score - 100
-            upgradeAmountE = upgradeAmountE +1
-            document.getElementById("upgradeAmountE").innerText ="Amount = " + upgradeAmountE
+            score = score - 5000
+            upgradeAmountE = upgradeAmountE + 1
+            document.getElementById("upgradeAmountE").innerText = "Amount = " + upgradeAmountE
         }
     }
-    function galaxy(){
-        if (score >= 200) {
+    function galaxy() {
+        if (score >= 10000) {
             setInterval(multiplier, 50)
-            score = score - 200
-            upgradeAmountF = upgradeAmountF +1
-            document.getElementById("upgradeAmountF").innerText ="Amount = " + upgradeAmountF
-        }  
+            score = score - 10000
+            upgradeAmountF = upgradeAmountF + 1
+            document.getElementById("upgradeAmountF").innerText = "Amount = " + upgradeAmountF
+        }
     }
 </script>
