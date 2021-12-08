@@ -11,7 +11,7 @@
         }
 
         p2 {
-            margin-right: 60px;
+            margin-right: 30px;
             background-color: grey;
         }
 
@@ -79,7 +79,7 @@
     <p>Bee Box - 100 Honey / 1 Honey per 1.5 seconds</p>
     <p>Bee Keeper - 500 Honey / 1 Honey per 0.8 seconds</p>
     <p>Honey Factory - 1000 Honey / 1 Honey per 0.5 seconds</p>
-    <p>Honey Planet - 5000 Honey / 1 Honey per 0.1 seconds</p>
+    <p>Bee Planet - 5000 Honey / 1 Honey per 0.1 seconds</p>
     <p>Bee Galaxy - 10000 Honey / 1 Honey per 0.05 seconds</p>
 
     <br>
@@ -120,7 +120,7 @@
             setInterval(multiplier, 1500)
             score = score - 100
             upgradeAmountA = upgradeAmountA + 1
-            document.getElementById("upgradeAmountA").innerText = "Amount = " + upgradeAmountA
+            document.getElementById("upgradeAmountA").innerText = "Amount of Bee Boxes = " + upgradeAmountA
         }
     }
     function multiplier() {
@@ -132,7 +132,7 @@
             setInterval(multiplier, 800)
             score = score - 500
             upgradeAmountB = upgradeAmountB + 1
-            document.getElementById("upgradeAmountB").innerText = "Amount = " + upgradeAmountB
+            document.getElementById("upgradeAmountB").innerText = "Amount of Beekeepers = " + upgradeAmountB
         }
     }
     function jar() {
@@ -140,7 +140,7 @@
             setInterval(multiplier, 2000)
             score = score - 20
             upgradeAmountC = upgradeAmountC + 1
-            document.getElementById("upgradeAmountC").innerText = "Amount = " + upgradeAmountC
+            document.getElementById("upgradeAmountC").innerText = "Amount of Jars = " + upgradeAmountC
         }
     }
     function factory() {
@@ -148,7 +148,7 @@
             setInterval(multiplier, 500)
             score = score - 1000
             upgradeAmountD = upgradeAmountD + 1
-            document.getElementById("upgradeAmountD").innerText = "Amount = " + upgradeAmountD
+            document.getElementById("upgradeAmountD").innerText = "Amount of Honey Factories = " + upgradeAmountD
         }
     }
     function planet() {
@@ -156,7 +156,7 @@
             setInterval(multiplier, 100)
             score = score - 5000
             upgradeAmountE = upgradeAmountE + 1
-            document.getElementById("upgradeAmountE").innerText = "Amount = " + upgradeAmountE
+            document.getElementById("upgradeAmountE").innerText = "Amount of Bee Planets = " + upgradeAmountE
         }
     }
     function galaxy() {
@@ -164,7 +164,7 @@
             setInterval(multiplier, 50)
             score = score - 10000
             upgradeAmountF = upgradeAmountF + 1
-            document.getElementById("upgradeAmountF").innerText = "Amount = " + upgradeAmountF
+            document.getElementById("upgradeAmountF").innerText = "Amount of Bee Galaxies = " + upgradeAmountF
         }
     }
 </script>
