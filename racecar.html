@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
- 
- <style>
- 
- </style>
+
+    <style>
+
+    </style>
 
 </head>
 
 <body>
-<img src="Mario Cart.PNG">
-<img src="Luigi cart.PNG">
+    <img id="mario" src="Mario Cart.PNG">
+    <img id="luigi" src="Luigi cart.PNG">
 </body>
 
-<script>
-var Mario =document.getElementById
-var luigi =document.getElementById
-</script>
 </html>
+
+<script>
+    var mario = document.getElementById("mario")
+    var luigi = document.getElementById("luigi")
+
+    document.addEventListener("keydown", keydownHandler)
+
+    function keydownHandler(e) {
+        if (e.key==="f"){
+         mario.style.left="100px"
+        }
+    }
+</script>
