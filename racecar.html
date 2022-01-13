@@ -4,7 +4,21 @@
 <head>
 
     <style>
+      img{
+          position: absolute;
+          left: 0px;
+      }
+       
+      #mario{
+           top: 300px;
+           -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+       }
 
+      #luigi{
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+      }
     </style>
 
 </head>
@@ -19,12 +33,19 @@
 <script>
     var mario = document.getElementById("mario")
     var luigi = document.getElementById("luigi")
-
+    var position = 0
+    
     document.addEventListener("keydown", keydownHandler)
 
     function keydownHandler(e) {
         if (e.key==="f"){
-         mario.style.left="100px"
+         mario.style.left= position + "px"
+         position= position+6
+        }
+
+        if (e.key==="l"){
+         luigi.style.left= position + "px"
+         position= position+6
         }
     }
 </script>
