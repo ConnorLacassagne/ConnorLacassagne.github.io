@@ -10,14 +10,19 @@
       }
        
       #mario{
-           top: 300px;
+           bottom: 200px;
            -webkit-transform: scaleX(-1);
             transform: scaleX(-1);
        }
 
       #luigi{
+        top: 100px;
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
+      }
+
+      p{
+        text-align: center
       }
     </style>
 
@@ -26,6 +31,7 @@
 <body>
     <img id="mario" src="Mario Cart.PNG">
     <img id="luigi" src="Luigi cart.PNG">
+    <p id="timer"> Timer: 0</p>
 </body>
 
 </html>
@@ -33,19 +39,22 @@
 <script>
     var mario = document.getElementById("mario")
     var luigi = document.getElementById("luigi")
+    document.getElementById("timer").innerHTML = "Hello"
     var position = 0
+    var position2 = 0
     
     document.addEventListener("keydown", keydownHandler)
 
     function keydownHandler(e) {
         if (e.key==="f"){
          mario.style.left= position + "px"
-         position= position+6
+         position= position+50
         }
 
         if (e.key==="l"){
-         luigi.style.left= position + "px"
-         position= position+6
+         luigi.style.left= position2 + "px"
+         position2= position2+50
         }
+
     }
 </script>
