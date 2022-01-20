@@ -2,7 +2,7 @@
 <html>
 
 <head>
-
+<title>Mario Kart (Dollor Bin Edition)</title>
     <style>
       img{
           position: absolute;
@@ -39,10 +39,10 @@
 <script>
     var mario = document.getElementById("mario")
     var luigi = document.getElementById("luigi")
-    document.getElementById("timer").innerHTML = "String Cheese"
     var position = 0
     var position2 = 0
     var time = 0
+    
     
     document.addEventListener("keydown", keydownHandler)
     setInterval(timer,100)
@@ -61,7 +61,8 @@
     }
     
     function timer(){
-      time= time+1
+      time= time+1 
+      document.getElementById("timer").innerHTML = time;
     }
 
    
