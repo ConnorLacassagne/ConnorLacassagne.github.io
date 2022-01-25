@@ -24,13 +24,25 @@
       p{
         text-align: center
       }
+
+      #win{
+       height:200px;
+       width:400px;
+       position:absolute;
+       background-color: aqua;
+       text-align:center;
+       vertical-align: middle;
+       line-height: 200px;
+       display: none;
+      }
     </style>
 
 </head>
 
 <body>
-    <img id="mario" src="Mario Cart.PNG">
+    <img id="mario" src="Mario Cart.PNG"> 
     <img id="luigi" src="Luigi cart.PNG">
+    <div id="win">You Win!</div>
     <p id="timer"> Timer: 0</p>
 </body>
 
@@ -57,12 +69,22 @@
          luigi.style.left= position2 + "px"
          position2= position2+50
         }
-
-    }
-    
+        
+        if(position>=1400){
+          alert("You Win!")
+        }
+       
+        if(position2>=1400){
+          alert("You Win!")
+          document.getElementById("win").styledisplay="block"
+        }
+      }
+      
+  
     function timer(){
       time= time+1 
       document.getElementById("timer").innerHTML = time;
+      
     }
 
    
