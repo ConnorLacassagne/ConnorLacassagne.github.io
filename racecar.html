@@ -35,14 +35,23 @@
        line-height: 200px;
        display: none;
       }
+
+      p2{
+        position: absolute;
+        top: 50px;
+        right: 60px;
+        font-size: 18px;
+      }
     </style>
 
 </head>
 
 <body>
-    <img id="mario" src="Mario Cart.PNG"> 
+    <p>Timer</p>
+  <p2><u>Controls:</u> Mario - F / Luigi - L</p2>
+  <img id="mario" src="Mario Cart.PNG"> 
     <img id="luigi" src="Luigi cart.PNG">
-    <div id="win">You Win!</div>
+    <div id="win"><b>You Win!</b> Refresh the page to race again.</div>
     <p id="timer"> Timer: 0</p>
 </body>
 
@@ -71,12 +80,11 @@
         }
         
         if(position>=1400){
-          alert("You Win!")
+          document.getElementById("win").style.display="block"
         }
        
         if(position2>=1400){
-          alert("You Win!")
-          document.getElementById("win").styledisplay="block"
+          document.getElementById("win").style.display="block"
         }
       }
       
