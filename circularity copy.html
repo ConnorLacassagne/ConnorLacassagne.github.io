@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Circle Canvas Thing</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="900" height="900"></canvas>
+</body>
+
+</html>
+<script>
+  var canvas = document.getElementById("canvas")
+  var ctx = canvas.getContext("2d")
+  var x = [100, 300 , 500]
+  var y = [40, 60 , 80]
+
+  function move() {
+    ctx.clearRect(0, 0, 1000, 1000)
+    for (var i = 0; i < 3; i = i + 1) {
+      ctx.fillRect(x[i],y[i],100,100)
+      x[i] = x[i] + 5
+      y[i] = y[i] + 5
+    }
+
+  }
+
+
+  setInterval(move, 50)
+
+</script>
