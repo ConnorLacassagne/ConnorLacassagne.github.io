@@ -6,25 +6,42 @@
 </head>
 
 <body>
-  <canvas id="canvas" width="900" height="900"></canvas>
+  <canvas id="canvas" width="1000" height="700"></canvas>
 </body>
 
 </html>
 <script>
   var canvas = document.getElementById("canvas")
   var ctx = canvas.getContext("2d")
-  var x = [100, 300 , 500]
-  var y = [40, 60 , 80]
-   
+  var x = [100, 500, 300]
+  var y = [140, 160, 180]
+  var speedx = [2, 4, 6]
+  var speedy = [2, 4, 6]
+
   function move() {
     ctx.clearRect(0, 0, 1000, 1000)
     for (var i = 0; i < 3; i = i + 1) {
       ctx.beginPath()
-      ctx.arc(x[i],y[i],100,0,2*Math.PI)
+      ctx.arc(x[i], y[i], 50, 0, 2 * Math.PI)
       ctx.fill()
-      x[i] = x[i] + 5
-      y[i] = y[i] + 5
+      x[i] = x[i] + speedx[i]
+      y[i] = y[i] + speedy[i]
+      if (x[i] > 600) {
+        speedx[i] = -speedx[i]
+      }
+      if (x[i] < -1) {
+        speedx[i] = -speedx[i]
+      }
+      if(y[i] > 600) {
+        speedy[i]  = -speedy[i]
+      }
+      if(y[i] < -1) {
+        speedy[i]  = -speedy[i]
+      }
     }
+
+
+
 
   }
 
