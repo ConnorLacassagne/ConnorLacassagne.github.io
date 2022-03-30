@@ -7,32 +7,41 @@
 
 <body>
   <canvas id="canvas" width="1000" height="700"></canvas>
+  <p>Ink Circles: There are 1,000 circles in this box.</p>
 </body>
 
 </html>
 <script>
   var canvas = document.getElementById("canvas")
   var ctx = canvas.getContext("2d")
-  var x = [100, 500, 300]
-  var y = [140, 160, 180]
-  var speedx = [2, 4, 6]
-  var speedy = [2, 4, 6]
+  var x = []
+  var y = []
+  var radius=[]
+  var speedx = []
+  var speedy = []
+  for(i=0; i<1000; i=i+1){
+   x.push(Math.random()*1000)
+   y.push(Math.random()*700)
+   radius.push(Math.random()*40)
+   speedx.push(Math.random()*30)
+   speedy.push(Math.random()*30)
+  }
 
   function move() {
     ctx.clearRect(0, 0, 1000, 1000)
-    for (var i = 0; i < 3; i = i + 1) {
+    for (var i = 0; i < 1000; i = i + 1) {
       ctx.beginPath()
-      ctx.arc(x[i], y[i], 50, 0, 2 * Math.PI)
+      ctx.arc(x[i], y[i], radius[i], 0, 2 * Math.PI)
       ctx.fill()
       x[i] = x[i] + speedx[i]
       y[i] = y[i] + speedy[i]
-      if (x[i] > 600) {
+      if (x[i] > 1000) {
         speedx[i] = -speedx[i]
       }
       if (x[i] < -1) {
         speedx[i] = -speedx[i]
       }
-      if(y[i] > 600) {
+      if(y[i] > 1000) {
         speedy[i]  = -speedy[i]
       }
       if(y[i] < -1) {
