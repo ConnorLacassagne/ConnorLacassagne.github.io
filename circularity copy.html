@@ -19,18 +19,21 @@
   var radius=[]
   var speedx = []
   var speedy = []
+  var color=[]
   for(i=0; i<1000; i=i+1){
    x.push(Math.random()*1000)
    y.push(Math.random()*700)
    radius.push(Math.random()*40)
    speedx.push(Math.random()*30)
    speedy.push(Math.random()*30)
+   color.push("hsl("+Math.random()*360+",100%,50%")
   }
 
   function move() {
     ctx.clearRect(0, 0, 1000, 1000)
     for (var i = 0; i < 1000; i = i + 1) {
       ctx.beginPath()
+      ctx.fillStyle=color[i]
       ctx.arc(x[i], y[i], radius[i], 0, 2 * Math.PI)
       ctx.fill()
       x[i] = x[i] + speedx[i]
@@ -55,6 +58,6 @@
   }
 
 
-  setInterval(move, 50)
+  setInterval(move, 30)
 
 </script>
