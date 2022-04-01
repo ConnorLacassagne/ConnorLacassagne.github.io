@@ -22,9 +22,9 @@
   var color=[]
   for(i=0; i<1000; i=i+1){
    x.push(Math.random()*1000)
-   y.push(Math.random()*700)
+   y.push(Math.random()*-1000)
    radius.push(Math.random()*40)
-   speedx.push(Math.random()*30)
+   speedx.push(Math.random()*60-30)
    speedy.push(Math.random()*30)
    color.push("hsl("+Math.random()*360+",100%,50%")
   }
@@ -38,18 +38,18 @@
       ctx.fill()
       x[i] = x[i] + speedx[i]
       y[i] = y[i] + speedy[i]
-      if (x[i] > 1000) {
-        speedx[i] = -speedx[i]
-      }
-      if (x[i] < -1) {
-        speedx[i] = -speedx[i]
-      }
-      if(y[i] > 1000) {
-        speedy[i]  = -speedy[i]
-      }
-      if(y[i] < -1) {
-        speedy[i]  = -speedy[i]
-      }
+      // if (x[i] > 1000) {
+      //   speedx[i] = -speedx[i]
+      // }
+      // if (x[i] < -1) {
+      //   speedx[i] = -speedx[i]
+      // }
+      // if(y[i] > 1000) {
+      //   speedy[i]  = -speedy[i]
+      // }
+      // if(y[i] < -1) {
+      //   speedy[i]  = -speedy[i]
+      // }
     }
 
 
