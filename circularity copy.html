@@ -7,7 +7,7 @@
 
 <body>
   <canvas id="canvas" width="1000" height="700"></canvas>
-  <p>Ink Circles: There are 1,000 circles in this box.</p>
+  <p>Agario But Bad</p>
 </body>
 
 </html>
@@ -28,8 +28,8 @@
    x.push(Math.random()*1000)
    y.push(Math.random()*-1000)
    radius.push(Math.random()*40)
-   speedx.push(Math.random()*60-30)
-   speedy.push(Math.random()*30)
+   speedx.push(Math.random()*20-10)
+   speedy.push(Math.random()*10)
    color.push("hsl("+Math.random()*360+",100%,50%")
   }
    
@@ -42,33 +42,38 @@
     ctx.clearRect(0, 0, 1000, 1000)
     ctx.beginPath()
     ctx.fillStyle="black"
-    ctx.arc(mousex, mousey, 20, 0, 2 * Math.PI) 
+    ctx.arc(mousex, mousey, 10, 0, 2 * Math.PI) 
     ctx.fill()
-    for (var i = 0; i < 1000; i = i + 1) {
+    for (var i = 0; i < 50; i = i + 1) {
       ctx.beginPath()
       ctx.fillStyle=color[i]
       ctx.arc(x[i], y[i], radius[i], 0, 2 * Math.PI)
       ctx.fill()
       x[i] = x[i] + speedx[i]
       y[i] = y[i] + speedy[i]
-      // if (x[i] > 1000) {
-      //   speedx[i] = -speedx[i]
-      // }
-      // if (x[i] < -1) {
-      //   speedx[i] = -speedx[i]
-      // }
-      // if(y[i] > 1000) {
-      //   speedy[i]  = -speedy[i]
-      // }
-      // if(y[i] < -1) {
-      //   speedy[i]  = -speedy[i]
-      // }
+       
+      if (x[i] > 1100) {
+        speedx[i] = -speedx[i]
+      }
+       
+     if (x[i] < -100) {           //left
+       speedx[i] = -speedx[i]
+     }
+       
+      if(y[i] > 1100) {
+       y[i]=-6
+      }
+      
+      //if(y[i] < -1) {
+      // speedy[i]  = -speedy[i]
+      //}
     }
-
-
-
-
   }
+
+
+
+
+  
 
 
   setInterval(move, 30)
