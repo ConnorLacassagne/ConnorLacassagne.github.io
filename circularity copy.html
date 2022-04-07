@@ -22,6 +22,7 @@
   var color=[]
   var mousex=0
   var mousey=0
+  var mouseradius=10
   document.addEventListener("mousemove",mouse)
   
   for(i=0; i<1000; i=i+1){
@@ -42,7 +43,7 @@
     ctx.clearRect(0, 0, 1000, 1000)
     ctx.beginPath()
     ctx.fillStyle="black"
-    ctx.arc(mousex, mousey, 10, 0, 2 * Math.PI) 
+    ctx.arc(mousex, mousey,mouseradius, 0, 2 * Math.PI) 
     ctx.fill()
     for (var i = 0; i < 50; i = i + 1) {
       ctx.beginPath()
@@ -67,6 +68,14 @@
       //if(y[i] < -1) {
       // speedy[i]  = -speedy[i]
       //}
+
+      var a=x[i]-mousex
+      var b=y[i]-mousey
+      var distance= Math.sqrt(a*a + b*b)
+
+      if(distance){
+
+      }
     }
   }
 
