@@ -73,8 +73,16 @@
       var b=y[i]-mousey
       var distance= Math.sqrt(a*a + b*b)
 
-      if(distance>mouseradius+radius[i]){
+      if(distance<mouseradius+radius[i]){  //Touching
+        ctx.fillRect(mousex,mousey,20,20)
         
+        if(mouseradius<radius[i]){  //Die
+          
+        }
+        
+        if(mouseradius>radius[i]){  //Get Bigger
+
+        }
       }
     }
   }
