@@ -16,81 +16,96 @@
   var ctx = canvas.getContext("2d")
   var x = []
   var y = []
-  var radius=[]
+  var radius = []
   var speedx = []
   var speedy = []
-  var color=[]
-  var mousex=0
-  var mousey=0
-  var mouseradius=10
-  document.addEventListener("mousemove",mouse)
-  
-  for(i=0; i<1000; i=i+1){
-   x.push(Math.random()*1000)
-   y.push(Math.random()*-1000)
-   radius.push(Math.random()*40)
-   speedx.push(Math.random()*20-10)
-   speedy.push(Math.random()*10)
-   color.push("hsl("+Math.random()*360+",100%,50%")
+  var color = []
+  var mousex = 0
+  var mousey = 0
+  var mouseradius = 10
+  var score=0
+  document.addEventListener("mousemove", mouse)
+
+  for (i = 0; i < 1000; i = i + 1) {
+    x.push(Math.random() * 1000)
+    y.push(Math.random() * -1000)
+    radius.push(Math.random() * 40)
+    speedx.push(Math.random() * 20 - 10)
+    speedy.push(Math.random() * 10)
+    color.push("hsl(" + Math.random() * 360 + ",100%,50%")
   }
-   
-  function mouse(event){
-    mousex=event.clientX
-    mousey=event.clientY
+
+  function mouse(event) {
+    mousex = event.clientX
+    mousey = event.clientY
   }
-  
+
   function move() {
     ctx.clearRect(0, 0, 1000, 1000)
     ctx.beginPath()
-    ctx.fillStyle="black"
-    ctx.arc(mousex, mousey,mouseradius, 0, 2 * Math.PI) 
+    ctx.fillStyle = "black"
+    ctx.arc(mousex, mousey, mouseradius, 0, 2 * Math.PI)
     ctx.fill()
     for (var i = 0; i < 50; i = i + 1) {
       ctx.beginPath()
-      ctx.fillStyle=color[i]
+      ctx.fillStyle = color[i]
       ctx.arc(x[i], y[i], radius[i], 0, 2 * Math.PI)
       ctx.fill()
       x[i] = x[i] + speedx[i]
       y[i] = y[i] + speedy[i]
-       
+
       if (x[i] > 1100) {
         speedx[i] = -speedx[i]
       }
-       
-     if (x[i] < -100) {           //left
-       speedx[i] = -speedx[i]
-     }
-       
-      if(y[i] > 1100) {
-       y[i]=-6
+
+      if (x[i] < -100) {           //left
+        speedx[i] = -speedx[i]
       }
-      
+
+      if (y[i] > 1100) {
+        y[i] = -6
+      }
+
       //if(y[i] < -1) {
       // speedy[i]  = -speedy[i]
       //}
 
-      var a=x[i]-mousex
-      var b=y[i]-mousey
-      var distance= Math.sqrt(a*a + b*b)
+      var a = x[i] - mousex
+      var b = y[i] - mousey
+      var distance = Math.sqrt(a * a + b * b)
 
-      if(distance<mouseradius+radius[i]){  //Touching
-        ctx.fillRect(mousex,mousey,20,20)
-        
-        if(mouseradius<radius[i]){  //Die
-          
+      if (distance < mouseradius + radius[i]) {  //Touching
+        ctx.fillRect(mousex, mousey, 20, 20)
+
+        if (mouseradius < radius[i]) {  //Die
+
         }
-        
-        if(mouseradius>radius[i]){  //Get Bigger
 
+        if (mouseradius > radius[i]) {  //Get Bigger
+          mouseradius = mouseradius + 1
+          x.splice(i, 1)
+          y.splice(i, 1)
+          radius.splice(i, 1)
+          speedx.splice(i, 1)
+          speedy.splice(i, 1)
+          color.splice(i, 1)
+          score=score+1
         }
       }
-    }
+    }  
+    ctx.fillStyle="black"
+    ctx.font = "30px Arial"
+    ctx.fillText(score,90,100)
+    
+
+
   }
 
 
 
 
-  
+
+
 
 
   setInterval(move, 30)
