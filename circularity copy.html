@@ -78,7 +78,9 @@
         ctx.fillRect(mousex, mousey, 20, 20)
 
         if (mouseradius < radius[i]) {  //Die
-
+            alert("Game Over");
+            window.location.reload();
+            
         }
 
         if (mouseradius > radius[i]) {  //Get Bigger
