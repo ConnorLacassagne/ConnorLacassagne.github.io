@@ -23,7 +23,8 @@
   var mousex = 0
   var mousey = 0
   var mouseradius = 10
-  var score=0
+  var score = 0
+  alive = true
   document.addEventListener("mousemove", mouse)
 
   for (i = 0; i < 1000; i = i + 1) {
@@ -78,10 +79,10 @@
         ctx.fillRect(mousex, mousey, 20, 20)
 
         if (mouseradius < radius[i]) {  //Die
-            alert("Game Over");
-            window.location.reload();
-            
+          alive = false
         }
+
+
 
         if (mouseradius > radius[i]) {  //Get Bigger
           mouseradius = mouseradius + 1
@@ -91,14 +92,22 @@
           speedx.splice(i, 1)
           speedy.splice(i, 1)
           color.splice(i, 1)
-          score=score+1
+          score = score + 1
         }
       }
-    }  
-    ctx.fillStyle="black"
+    }
+    ctx.fillStyle = "black"
     ctx.font = "30px Arial"
-    ctx.fillText(score,90,100)
-    
+    ctx.fillText(score, 90, 100)
+    if (alive === false) {
+      ctx.fillStyle = "black"
+      ctx.font = "50px Arial"
+      mouseradius=0
+      ctx.fillText("Get owned scrub!", 25, 50)
+      ctx.fillText(score, 50, 100)
+      ctx.fillText("(click to restart)",100 , 200)
+     
+    }
 
 
   }
