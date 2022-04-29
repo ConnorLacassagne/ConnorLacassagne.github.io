@@ -25,11 +25,11 @@
   var mousey = -1000
   var mouseradius = 10
   var score = 0
-  alive = true
+  alive = false
   restart()
   document.addEventListener("mousemove", mouse)
   document.addEventListener("click", restart)
- 
+
 
   function mouse(event) {
     mousex = event.clientX
@@ -91,41 +91,45 @@
         }
       }
     }
-    ctx.fillStyle = "black"
-    ctx.font = "30px Arial"
-    ctx.fillText(score, 90, 100)
+
     if (alive === false) {
       ctx.fillStyle = "black"
       ctx.font = "50px Arial"
-      mouseradius=0
+      mouseradius = 0
       ctx.fillText("Get owned scrub!", 25, 50)
       ctx.fillText(score, 50, 100)
-      ctx.fillText("(click to restart)",100 , 200)
-     
+      ctx.fillText("(click to restart)", 100, 200)
+
     }
 
 
   }
-  function restart(){
-    score=0
-    mouseradius=10
-    x = []
-    y = []
-    radius = []
-    speedx = []
-    speedy = []
-    color = []
-    
-    for (i = 0; i < 1000; i = i + 1) {
-    x.push(Math.random() * 1000)
-    y.push(Math.random() * -1000)
-    radius.push(Math.random() * 40)
-    speedx.push(Math.random() * 20 - 10)
-    speedy.push(Math.random() * 10)
-    color.push("hsl(" + Math.random() * 360 + ",100%,50%")
-   }
+  function restart() {
+
+    if (alive === false) {
+      score = 0
+      mouseradius = 10
+      x = []
+      y = []
+      radius = []
+      speedx = []
+      speedy = []
+      color = []
+      alive=true
+
+      for (i = 0; i < 1000; i = i + 1) {
+        x.push(Math.random() * 1000)
+        y.push(Math.random() * -1000)
+        radius.push(Math.random() * 40)
+        speedx.push(Math.random() * 20 - 10)
+        speedy.push(Math.random() * 10)
+        color.push("hsl(" + Math.random() * 360 + ",100%,50%")
+      }
+
+
+    }
   }
- 
+
 
 
 
